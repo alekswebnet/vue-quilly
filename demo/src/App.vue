@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import BasicEditor from './components/BasicEditor.vue'
-// import BubbleEditor from './components/BubbleEditor.vue'
 </script>
 
 <template>
   <div class="container">
     <BasicEditor />
-    <!-- <BubbleEditor /> -->
   </div>
 </template>
 
@@ -16,11 +14,13 @@ button,
 input,
 textarea {
   font-family: system-ui, sans-serif;
+  font-size: 14px;
 }
 body {
   margin: 0;
   padding: 0;
   padding: 30px;
+  font-size: 14px;
   text-rendering: optimizeSpeed;
 }
 .container {
@@ -29,8 +29,10 @@ body {
   margin: auto;
 }
 .text-label {
-  font-size: 0.9rem;
   text-transform: uppercase;
   color: slategray;
+}
+button + button {
+  margin-left: 10px;
 }
 </style>

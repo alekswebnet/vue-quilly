@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { QuillyEditor } from '../../../src/'
 import Quill from 'quill'
-import { Delta } from 'quill/core'
+import { Delta, Range } from 'quill/core'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import katex from 'katex'
@@ -10,9 +10,9 @@ import 'katex/dist/katex.min.css'
 window.katex = katex
 
 const editor = ref<InstanceType<typeof QuillyEditor>>()
-const model = ref()
-const editorDelta = ref()
-const editorRange = ref()
+const model = ref<string>()
+const editorDelta = ref<Delta>()
+const editorRange = ref<Range>()
 
 // Define Quill options
 const options = {
@@ -53,11 +53,12 @@ const quill = computed(() => editor.value?.quillInstance())
   />
   <p class="text-label">MODEL:</p>
   <p>{{ model }}</p>
-  <button @click="model = `<h1>Hello world!</h1><p>I am a new paragraph</p>`">Set model</button>
-  <button @click="quill?.setContents([])">Reset model</button>
+  <button class="pure-button" @click="model = `<h1>Hello world!</h1><p>I am a new paragraph</p>`">Set model</button>
+  <button class="pure-button" @click="quill?.setContents([])">Reset model</button>
   <p class="text-label">CONTENTS:</p>
   <p>{{ quill?.getContents() }}</p>
   <button
+    class="pure-button"
     @click="
       quill?.setContents(
         new Delta()
@@ -73,12 +74,12 @@ const quill = computed(() => editor.value?.quillInstance())
   >
     Set contents
   </button>
-  <button @click="quill?.setContents([])">Reset contents</button>
+  <button class="pure-button" @click="quill?.setContents([])">Reset contents</button>
   <p class="text-label">LAST CHANGE:</p>
   <p>{{ editorDelta }}</p>
   <p class="text-label">CURRENT SELECTION:</p>
   <p>{{ editorRange }}</p>
-  <button @click="quill?.setSelection({ index: 35, length: 0 })">Set range</button>
+  <button class="pure-button" @click="quill?.setSelection({ index: 5, length: 2 })">Set range</button>
   <p class="text-label">CONTENT LENGTH:</p>
   <p>{{ quill?.getLength() }}</p>
 </template>

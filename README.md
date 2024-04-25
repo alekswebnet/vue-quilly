@@ -68,6 +68,8 @@ Initialize the editor:
 />
 ```
 ```ts
+const editor = ref<InstanceType<typeof QuillyEditor>>()
+
 onMounted(() => {
   const quillInstance = editor.value?.initialize(new Quill(editor.value.container!, options))
   console.log(quillInstance)
@@ -93,6 +95,8 @@ quill?.value?.setContents(
     .insert('\n')
 )
 ```
+
+Creating base Quill editor [Full demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/src/components/BasicEditor.vue)
 
 ## Events
 
