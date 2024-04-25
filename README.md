@@ -96,18 +96,18 @@ quill?.value?.setContents(
 
 ## Events
 
-The component provides `text-change`, `selection-change`, `editor-change` events, identical to [Quill events](https://quilljs.com/docs/api#events).
+The component emits `text-change`, `selection-change`, `editor-change` events, identical to [Quill events](https://quilljs.com/docs/api#events).
 
 All events types:
 
-| Event name        | Params                                                  |
-| ----------------- | ------------------------------------------------------- |
-| text-change       | delta: Delta, oldContent: Delta, source: EmitterSource  |
-| selection-change  | range: Range, oldRange: Range, source: EmitterSource    |
-| editor-change     | eventName: string                                       |
-| focus             | quill: Quill                                            |
-| blur              | quill: Quill                                            |
-| ready             | quill: Quill                                            |
+| Event name          | Params                                                       |
+| ------------------- | ------------------------------------------------------------ |
+| `text-change`       | delta: `Delta`, oldContent: `Delta`, source: `EmitterSource` |
+| `selection-change`  | range: `Range`, oldRange: `Range`, source: `EmitterSource`   |
+| `editor-change`     | eventName: `string`                                          |
+| `focus`             | quill: `Quill`                                               |
+| `blur`              | quill: `Quill`                                               |
+| `ready`             | quill: `Quill`                                               |
 
 ## License
 
