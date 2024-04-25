@@ -7,12 +7,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      script: {
-        propsDestructure: true,
-        defineModel: true
-      }
-    }),
+    vue(),
     dts(),
     nodePolyfills()
   ],
