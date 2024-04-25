@@ -47,7 +47,6 @@ const quill = computed(() => editor.value?.quillInstance())
   <QuillyEditor
     ref="editor"
     v-model="model"
-    class="editor"
     @text-change="({ delta }) => (editorDelta = delta)"
     @selection-change="({ range }) => (editorRange = range)"
     @editor-change="(eventName) => console.log(eventName)"
