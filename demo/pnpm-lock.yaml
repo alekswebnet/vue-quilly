@@ -21,8 +21,8 @@ importers:
         specifier: ^3.4.21
         version: 3.4.24(typescript@5.4.5)
       vue-quilly:
-        specifier: ^0.1.0
-        version: 0.1.0(quill@2.0.0)(vue@3.4.24(typescript@5.4.5))
+        specifier: ^0.1.1
+        version: 0.1.1(quill@2.0.0)(vue@3.4.24(typescript@5.4.5))
     devDependencies:
       '@types/katex':
         specifier: ^0.16.7
@@ -512,8 +512,8 @@ packages:
       '@vue/composition-api':
         optional: true
 
-  vue-quilly@0.1.0:
-    resolution: {integrity: sha512-OO+nQCuumkykCoieXbOanFshkKUfxdAN/3BHyDDroCYnDo27hTnliNJuqqwHDIi3P2bzW1/Z1/PxjCQqO5uEDw==}
+  vue-quilly@0.1.1:
+    resolution: {integrity: sha512-6dvys0BWoa9RTGOaHUHgJM623UHl/fMwCYriMj2uG1CfJRb7rGhDrk+npaF2SgW+x7Zb/v3BYtCH0T+t2WK7nA==}
     peerDependencies:
       quill: ^2.0.0
       vue: ^3.0.0
@@ -929,7 +929,7 @@ snapshots:
     dependencies:
       vue: 3.4.24(typescript@5.4.5)
 
-  vue-quilly@0.1.0(quill@2.0.0)(vue@3.4.24(typescript@5.4.5)):
+  vue-quilly@0.1.1(quill@2.0.0)(vue@3.4.24(typescript@5.4.5)):
     dependencies:
       quill: 2.0.0
       vue: 3.4.24(typescript@5.4.5)

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { QuillyEditor } from '../../../src/'
+import { QuillyEditor } from 'vue-quilly'
 import { Delta, Range } from 'quill/core'
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css'
