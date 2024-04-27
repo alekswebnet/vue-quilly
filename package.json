@@ -35,6 +35,7 @@
     "name": "Oleksandr Shevchuk",
     "email": "alekswebnet@gmail.com"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alekswebnet/vue-quilly.git"
