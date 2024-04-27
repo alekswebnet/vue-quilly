@@ -10,6 +10,8 @@ It's not a all-in-one solution and requires further Quill configuration.
 In other hand, you can build your own editor, that matches your needs, with easy.
 No matter if you want to create full-featured editor with all Quill's modules or small custom solution with extra functionality, you can use this package as a base start point.
 
+See [demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/) how to build your editor upon this component.
+
 ## Features
 
 - Builded on top of [Quill v2](https://github.com/quilljs/quill) and Vue 3
