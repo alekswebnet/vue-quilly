@@ -31,6 +31,10 @@
     "dist",
     "src/components/"
   ],
+  "author": {
+    "name": "Oleksandr Shevchuk",
+    "email": "alekswebnet@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alekswebnet/vue-quilly.git"

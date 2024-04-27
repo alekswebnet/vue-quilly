@@ -12,10 +12,9 @@ No matter if you want to create full-featured editor with all Quill's modules or
 
 ## Features
 
-- Builded on top of [Quill v2](https://github.com/quilljs/quill)
+- Builded on top of [Quill v2](https://github.com/quilljs/quill) and Vue 3
 - Uses `quill/core` to prevent importing all Quill modules
 - Works with both HTML and Quill Delta format
-- Uses `getSemanticHTML` function from Quill API for convertaion Delta into a clean HTML output
 - Typescript support
 
 ## Setup
@@ -39,16 +38,16 @@ import { QuillyEditor } from 'vue-quilly'
 Add core styles. Also import one of Quill's [themes](https://quilljs.com/docs/customization/themes#themes), if you need one:
 
 ```ts
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css' // For snow theme
-import 'quill/dist/quill.bubble.css' // For bubble theme
+import 'quill/dist/quill.core.css' // Required
+import 'quill/dist/quill.snow.css' // For snow theme (optional)
+import 'quill/dist/quill.bubble.css' // For bubble theme (optional)
 ```
 
 Define Quill [options](https://quilljs.com/docs/configuration#options):
 
 ```ts
 const options = {
-  theme: 'snow',
+  theme: 'snow', // If you need Quill theme
   modules: {
     toolbar: true,
   },
@@ -58,33 +57,33 @@ const options = {
 ```
 Initialize the editor:
 
+```ts
+const editor = ref<InstanceType<typeof QuillyEditor>>()
+const model = ref<string>('<p>Hello Quilly!</p>')
+// Quill instance
+let quill: Quill | null = null
+onMounted(() => {
+  quill = editor.value?.initialize(Quill)!
+})
+```
 ```html
 <QuillyEditor
   ref="editor"
   v-model="model"
-  @text-change="({ delta }) => (editorDelta = delta)"
-  @selection-change="({ range }) => (editorRange = range)"
-  @editor-change="(eventName) => console.log(eventName)"
+  :options="options"
+  @text-change="({ delta, oldContent, source }) => console.log('text-change', delta, oldContent, source)"
+  @selection-change="({ range, oldRange, source }) => console.log('selection-change', range, oldRange, source)"
+  @editor-change="(eventName) => console.log('editor-change', `eventName: ${eventName}`)"
+  @focus="(quill) => console.log('focus', quill)"
+  @blur="(quill) => console.log('blur', quill)"
+  @ready="(quill) => console.log('ready', quill)"
 />
 ```
-```ts
-const editor = ref<InstanceType<typeof QuillyEditor>>()
 
-onMounted(() => {
-  const quillInstance = editor.value?.initialize(new Quill(editor.value.container!, options))
-  console.log(quillInstance)
-})
-```
-
-Get access to reactive Quill instance:
+Use `v-model` for HTML content type. You can set content in Delta format using Quill instance:
 
 ```ts
-const quill = computed(() => editor.value?.quillInstance())
-```
-Use `v-model` for HTML content type. You can set Delta content using Quill instance:
-
-```ts
-quill?.value?.setContents(
+quill?.setContents(
   new Delta()
     .insert('Hello')
     .insert('\n', { header: 1 })
@@ -96,22 +95,22 @@ quill?.value?.setContents(
 )
 ```
 
-Creating base Quill editor [Full demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/src/components/BasicEditor.vue)
+Creating editors with `QullyEditor` [full demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/)
 
 ## Events
 
-The component emits `text-change`, `selection-change`, `editor-change` events, identical to [Quill events](https://quilljs.com/docs/api#events).
+The component emits `text-change`, `selection-change`, `editor-change` events, similar to [Quill events](https://quilljs.com/docs/api#events).
 
 All events types:
 
-| Event name          | Params                                                       |
-| ------------------- | ------------------------------------------------------------ |
-| `text-change`       | delta: `Delta`, oldContent: `Delta`, source: `EmitterSource` |
-| `selection-change`  | range: `Range`, oldRange: `Range`, source: `EmitterSource`   |
-| `editor-change`     | eventName: `string`                                          |
-| `focus`             | quill: `Quill`                                               |
-| `blur`              | quill: `Quill`                                               |
-| `ready`             | quill: `Quill`                                               |
+| Event name          | Params                                                           |
+| ------------------- | ---------------------------------------------------------------- |
+| `text-change`       | { delta: `Delta`, oldContent: `Delta`, source: `EmitterSource` } |
+| `selection-change`  | { range: `Range`, oldRange: `Range`, source: `EmitterSource` }   |
+| `editor-change`     | eventName: `string`                                              |
+| `focus`             | quill: `Quill`                                                   |
+| `blur`              | quill: `Quill`                                                   |
+| `ready`             | quill: `Quill`                                                   |
 
 ## License
 

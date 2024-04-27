@@ -1,10 +1,31 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import BasicEditor from './components/BasicEditor.vue'
+import CompleteEditor from './components/CompleteEditor.vue'
+import { useUrlSearchParams } from '@vueuse/core'
+
+const params = useUrlSearchParams('hash-params')
+
+const isBasicTab = computed(() => !params.tab || params.tab === 'basic')
+const isCompleteTab = computed(() => params.tab === 'complete')
 </script>
 
 <template>
   <div class="container">
-    <BasicEditor />
+    <div class="pure-menu pure-menu-horizontal">
+      <a href="https://github.com/alekswebnet/vue-quilly" target="_blank" class="pure-menu-heading pure-menu-link">vue-quilly</a>
+      <ul class="pure-menu-list">
+          <li class="pure-menu-item" :class="{ 'pure-menu-selected': isBasicTab }">
+              <a href="#tab=basic" class="pure-menu-link">Basic Editor</a>
+          </li>
+          <li class="pure-menu-item" :class="{ 'pure-menu-selected': isCompleteTab }">
+              <a href="#tab=complete" class="pure-menu-link">Complete Editor</a>
+          </li>
+      </ul>
+    </div>
+    <hr>
+    <BasicEditor v-if="isBasicTab" />
+    <CompleteEditor v-if="isCompleteTab" />
   </div>
 </template>
 

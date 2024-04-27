@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Quill, { Delta, EmitterSource, Range } from 'quill/core'
-import { Ref, ref, watch } from 'vue'
+import Quill, { Delta, EmitterSource, QuillOptions, Range } from 'quill/core'
+import { onBeforeUnmount, ref, watch } from 'vue'
 
 const props = defineProps<{
   modelValue?: string
-  readOnly?: boolean
+  options?: QuillOptions
 }>()
 
 const emit = defineEmits<{
@@ -23,34 +23,24 @@ const emit = defineEmits<{
   (e: 'ready', quill: Quill): void
 }>()
 
-let quill: Quill
+let quillInstance: Quill | null = null
 const container = ref<HTMLElement>()
 const model = ref<string>()
 
-// Paste HTML from modelValue to editor
-const pasteHTML = () => {
+// Convert modelValue HTML to Delta and replace editor content
+const pasteHTML = (quill: Quill | null) => {
   model.value = props.modelValue
-  const content = quill.clipboard.convert({ html: props.modelValue })
-  quill.setContents(content!)
+  const content = quill!.clipboard.convert({ html: props.modelValue })
+  quill!.setContents(content!)
 }
 
 // Editor initialization, returns Quill instance
-const initialize = (quillInstance?: Quill | null) => {
-  // Check initial Quill instance
-  if (!quillInstance) {
-    console.warn('[QuillyEditor]: Unable to init, Quill instance is not found')
-    return null
-  }
-
-  // Save ref to the Quill instance
-  quill = quillInstance
-
-  // Set editor enabled
-  quill.enable(!props.readOnly)
+const initialize = (QuillClass: typeof Quill) => {
+  const quill = new QuillClass(container.value!, props.options)
 
   // Set editor initial model
   if (props.modelValue) {
-    pasteHTML()
+    pasteHTML(quill)
   }
 
   // Handle editor selection change, emit blur and focus
@@ -65,7 +55,7 @@ const initialize = (quillInstance?: Quill | null) => {
 
   // Handle editor text change
   quill.on('text-change', (delta, oldContent, source) => {
-    model.value = quill.getSemanticHTML()
+    model.value = quill.root.innerHTML
     emit('text-change', { delta, oldContent, source })
   })
 
@@ -76,21 +66,20 @@ const initialize = (quillInstance?: Quill | null) => {
 
   emit('ready', quill)
 
+  quillInstance = quill
+
   return quill
 }
-
-// Make Quill instance reactive to props
-const quillInstance = () => (props.modelValue && props.readOnly ? quill : quill)
 
 // Watch modelValue and paste HTML if has changes
 watch(
   () => props.modelValue,
   (newValue) => {
     if (newValue && newValue !== model.value) {
-      pasteHTML()
-      model.value = quill.getSemanticHTML()
+      pasteHTML(quillInstance)
+      model.value = quillInstance!.getSemanticHTML()
     } else if (!newValue) {
-      quill?.setContents([])
+      quillInstance!.setContents([])
     }
   }
 )
@@ -100,19 +89,17 @@ watch(model, (newValue, oldValue) => {
   if (newValue && newValue !== oldValue) {
     emit('update:modelValue', newValue)
   } else if (!newValue) {
-    quill?.setContents([])
+    quillInstance!.setContents([])
   }
 })
 
-// Expose container element, init function and Quill instance
+onBeforeUnmount(() => quillInstance = null)
+
+// Expose init function
 defineExpose<{
-  container: Ref<HTMLElement | undefined>
-  initialize: (quillInstance?: Quill | null) => void
-  quillInstance: () => Quill
+  initialize: (QuillClass: typeof Quill) => Quill
 }>({
-  container,
-  initialize,
-  quillInstance
+  initialize
 })
 </script>
 
