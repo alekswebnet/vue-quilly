@@ -1,7 +1,7 @@
 # vue-quilly
 
-![npm version](https://img.shields.io/npm/v/vue-quilly?logo=npm&logoColor=fff)
-![npm bundle size](https://img.shields.io/bundlephobia/min/vue-quilly)
+[![npm version](https://img.shields.io/npm/v/vue-quilly?logo=npm&logoColor=fff)](www.npmjs.com/package/vue-quilly)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/vue-quilly)](https://www.npmjs.com/package/vue-quilly?activeTab=code)
 
 Tiny Vue component, that helps to create [Quill v2](https://quilljs.com/) based WYSIWYG editors in Vue-powered apps.
 Flexible setup, no styles, ready for further customization.
@@ -13,7 +13,7 @@ It's not a all-in-one solution and requires further Quill configuration.
 In other hand, you can build your own editor, that matches your needs, with easy.
 No matter if you want to create full-featured editor with all Quill's modules or small custom solution with extra functionality, you can use this package as a base start point.
 
-See [demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/) how to build your editor upon this component.
+Run [demo](vue-quilly.vercel.app/), that shows editors, builded upon `QuillyEditor` component. See demo [code](https://github.com/alekswebnet/vue-quilly/blob/main/demo/).
 
 ## Features
 
@@ -100,7 +100,7 @@ quill?.setContents(
 )
 ```
 
-Creating editors with `QullyEditor` [full demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/)
+Creating editors with `QullyEditor` [demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/)
 
 ## Events
 
