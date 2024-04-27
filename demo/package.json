@@ -12,7 +12,8 @@
     "@vueuse/core": "^10.9.0",
     "katex": "^0.16.10",
     "quill": "2.0.0",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-quilly": "^0.1.0"
   },
   "devDependencies": {
     "@types/katex": "^0.16.7",
