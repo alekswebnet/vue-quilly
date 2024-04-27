@@ -12,8 +12,9 @@ const isCompleteTab = computed(() => params.tab === 'complete')
 
 <template>
   <div class="container">
+    <h1>vue-quilly</h1>
     <div class="pure-menu pure-menu-horizontal">
-      <a href="https://github.com/alekswebnet/vue-quilly" target="_blank" class="pure-menu-heading pure-menu-link">vue-quilly</a>
+      <a href="https://github.com/alekswebnet/vue-quilly/tree/main/demo" target="_blank" class="pure-menu-heading pure-menu-link">Github 🔗</a>
       <ul class="pure-menu-list">
           <li class="pure-menu-item" :class="{ 'pure-menu-selected': isBasicTab }">
               <a href="#tab=basic" class="pure-menu-link">Basic Editor</a>
