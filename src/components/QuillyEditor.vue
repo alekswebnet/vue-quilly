@@ -31,7 +31,6 @@ const model = ref<string>()
 const pasteHTML = (quill: Quill | null) => {
   model.value = props.modelValue
   const content = quill!.clipboard.convert({ html: props.modelValue })
-  quill!.setContents(content)
   return content
 }
 
@@ -81,7 +80,7 @@ watch(
   (newValue) => {
     if (newValue && newValue !== model.value) {
       pasteHTML(quillInstance)
-      model.value = quillInstance!.getSemanticHTML()
+      model.value = quillInstance!.root.innerHTML
     } else if (!newValue) {
       quillInstance!.setContents([])
     }
