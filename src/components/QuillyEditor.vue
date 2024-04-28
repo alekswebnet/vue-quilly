@@ -31,7 +31,8 @@ const model = ref<string>()
 const pasteHTML = (quill: Quill | null) => {
   model.value = props.modelValue
   const content = quill!.clipboard.convert({ html: props.modelValue })
-  quill!.setContents(content!)
+  quill!.setContents(content)
+  return content
 }
 
 // Editor initialization, returns Quill instance
@@ -40,7 +41,10 @@ const initialize = (QuillClass: typeof Quill) => {
 
   // Set editor initial model
   if (props.modelValue) {
-    pasteHTML(quill)
+    const oldContent = quill.getContents()
+    const delta = pasteHTML(quill)
+    console.log(delta, oldContent)
+    emit('text-change', { delta, oldContent, source: 'api' })
   }
 
   // Handle editor selection change, emit blur and focus
