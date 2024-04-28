@@ -15,7 +15,7 @@ It's not a all-in-one solution and requires further Quill configuration.
 In other hand, you can build your own editor, that matches your needs, with easy.
 No matter if you want to create full-featured editor with all Quill's modules or small custom solution with extra functionality, you can use this package as a base start point.
 
-Run [demo](vue-quilly.vercel.app/), that shows editors, builded upon `QuillyEditor` component. See demo [code](https://github.com/alekswebnet/vue-quilly/blob/main/demo/).
+Run [demo](https://vue-quilly.vercel.app/), that shows editors, builded upon `QuillyEditor` component. See demo [code](https://github.com/alekswebnet/vue-quilly/blob/main/demo/).
 
 ## Features
 
