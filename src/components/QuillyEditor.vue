@@ -28,10 +28,17 @@ const container = ref<HTMLElement>()
 const model = ref<string>()
 
 // Convert modelValue HTML to Delta and replace editor content
-const pasteHTML = (quill: Quill | null) => {
+const pasteHTML = (quill: Quill) => {
   model.value = props.modelValue
-  const content = quill!.clipboard.convert({ html: props.modelValue })
-  return content
+  const oldContent = quill.getContents()
+  const oldRange = quill.getSelection()!
+  const delta = quill.clipboard.convert({ html: props.modelValue })
+  const range = { index: model.value!.length, length: 0 }
+  quill.setContents(delta)
+  quill.setSelection(range)
+  emit('text-change', { delta, oldContent, source: 'api' })
+  emit('selection-change', { range, oldRange, source: 'api' })
+  return delta
 }
 
 // Editor initialization, returns Quill instance
@@ -40,10 +47,7 @@ const initialize = (QuillClass: typeof Quill) => {
 
   // Set editor initial model
   if (props.modelValue) {
-    const oldContent = quill.getContents()
-    const delta = pasteHTML(quill)
-    console.log(delta, oldContent)
-    emit('text-change', { delta, oldContent, source: 'api' })
+    pasteHTML(quill)
   }
 
   // Handle editor selection change, emit blur and focus
@@ -79,7 +83,7 @@ watch(
   () => props.modelValue,
   (newValue) => {
     if (newValue && newValue !== model.value) {
-      pasteHTML(quillInstance)
+      pasteHTML(quillInstance!)
       model.value = quillInstance!.root.innerHTML
     } else if (!newValue) {
       quillInstance!.setContents([])
