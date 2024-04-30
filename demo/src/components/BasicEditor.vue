@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { QuillyEditor } from '../../../'
+import { QuillyEditor } from 'vue-quilly'
 import Quill, { Delta, Range } from 'quill/core'
 import { type BlotConstructor } from 'parchment'
 import 'quill/dist/quill.core.css'
@@ -44,6 +44,10 @@ const options = {
 onMounted(() => {
   quill = editor.value!.initialize(Quill)
 })
+
+const onTextChange = (({ delta }: { delta: Delta }) => (editorDelta.value = delta))
+const onSelectionChange = ({ range }: { range: Range }) => (editorRange.value = range)
+const onEditorChange = (eventName: string) => console.log(eventName)
 </script>
 
 <template>
@@ -57,9 +61,9 @@ onMounted(() => {
     ref="editor"
     v-model="model"
     :options="options"
-    @text-change="({ delta }) => (editorDelta = delta)"
-    @selection-change="({ range }) => (editorRange = range)"
-    @editor-change="(eventName) => console.log(eventName)"
+    @text-change="onTextChange"
+    @selection-change="onSelectionChange"
+    @editor-change="onEditorChange"
   />
   <p class="text-label">Model value:</p>
   <p>{{ model }}</p>
