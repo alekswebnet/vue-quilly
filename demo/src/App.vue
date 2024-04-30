@@ -55,6 +55,9 @@ body {
   color: slategray;
 }
 button + button {
-  margin-left: 10px;
+  margin-left: 2px;
 }
+.button-xsmall {
+  font-size: 70%;
+ }
 </style>
