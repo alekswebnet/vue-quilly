@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "quill": "^2.0.0",
+    "quill": "^2.0.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -70,7 +70,7 @@
     }
   },
   "peerDependencies": {
-    "vue": "^3.0.0",
-    "quill": "^2.0.0"
+    "quill": "^2.0.0",
+    "vue": "^3.0.0"
   }
 }
