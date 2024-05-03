@@ -27,9 +27,9 @@ Run [demo](https://vue-quilly.vercel.app/), that shows editors, builded upon `Qu
 ## Setup
 
 ```bash
-npm add quill@2.0.0 vue-quilly
+npm install quill@2.0.1 vue-quilly
 # Or
-pnpm add quill@2.0.0 vue-quilly
+pnpm add quill@2.0.1 vue-quilly
 ```
 
 ## Get started
