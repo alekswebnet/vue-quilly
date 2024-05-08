@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "katex": "^0.16.10",
+    "nuxt": "^3.11.2",
+    "quill": "2.0.1",
+    "vue": "^3.4.21",
+    "vue-quilly": "^1.0.2",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7"
+  }
+}
