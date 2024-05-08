@@ -78,6 +78,7 @@ onMounted(() => {
   ref="editor"
   v-model="model"
   :options="options"
+  @update:modelValue="(value) => console.log('HTML model updated:', value)"
   @text-change="({ delta, oldContent, source }) => console.log('text-change', delta, oldContent, source)"
   @selection-change="({ range, oldRange, source }) => console.log('selection-change', range, oldRange, source)"
   @editor-change="(eventName) => console.log('editor-change', `eventName: ${eventName}`)"
@@ -102,7 +103,8 @@ quill?.setContents(
 )
 ```
 
-Creating editors with `QullyEditor` [demo](https://github.com/alekswebnet/vue-quilly/blob/main/demo/)
+This is just basic example and shows you how to build your editor.
+See creating editors with `QullyEditor` [example](https://github.com/alekswebnet/vue-quilly/blob/main/demo/) or run [demo](https://vue-quilly.vercel.app/).
 
 ## Events
 
@@ -112,12 +114,26 @@ All events types:
 
 | Event name          | Params                                                           |
 | ------------------- | ---------------------------------------------------------------- |
+| `update:modelValue` | value: `string`                                                  |
 | `text-change`       | { delta: `Delta`, oldContent: `Delta`, source: `EmitterSource` } |
 | `selection-change`  | { range: `Range`, oldRange: `Range`, source: `EmitterSource` }   |
 | `editor-change`     | eventName: `string`                                              |
 | `focus`             | quill: `Quill`                                                   |
 | `blur`              | quill: `Quill`                                                   |
 | `ready`             | quill: `Quill`                                                   |
+
+## Nuxt
+
+You must build your editor, based on `VueQuilly` component first.
+Then put it inside `ClientOnly` component:
+
+```html
+<ClientOnly>
+  <CompleteEditor />
+</ClientOnly>
+```
+
+See [Nuxt 3 example](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/app.vue).
 
 ## License
 
