@@ -31,13 +31,9 @@ const model = ref<string>()
 const pasteHTML = (quill: Quill) => {
   model.value = props.modelValue
   const oldContent = quill.getContents()
-  const oldRange = quill.getSelection()!
   const delta = quill.clipboard.convert({ html: props.modelValue })
-  const range = { index: model.value!.length, length: 0 }
   quill.setContents(delta)
-  quill.setSelection(range)
   emit('text-change', { delta, oldContent, source: 'api' })
-  emit('selection-change', { range, oldRange, source: 'api' })
   return delta
 }
 

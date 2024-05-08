@@ -45,6 +45,7 @@ onMounted(() => {
   quill = editor.value!.initialize(Quill)
 })
 
+const onModelValueChange = (value: string) => console.log(value)
 const onTextChange = (({ delta }: { delta: Delta }) => (editorDelta.value = delta))
 const onSelectionChange = ({ range }: { range: Range }) => (editorRange.value = range)
 const onEditorChange = (eventName: string) => console.log(eventName)
@@ -61,6 +62,7 @@ const onEditorChange = (eventName: string) => console.log(eventName)
     ref="editor"
     v-model="model"
     :options="options"
+    @update:model-value="onModelValueChange"
     @text-change="onTextChange"
     @selection-change="onSelectionChange"
     @editor-change="onEditorChange"
