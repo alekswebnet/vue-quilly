@@ -21,8 +21,8 @@ importers:
         specifier: ^3.4.21
         version: 3.4.27
       vue-quilly:
-        specifier: ^1.0.2
-        version: 1.0.2(quill@2.0.1)(vue@3.4.27)
+        specifier: ^1.0.3
+        version: 1.0.3(quill@2.0.1)(vue@3.4.27)
       vue-router:
         specifier: ^4.3.0
         version: 4.3.2(vue@3.4.27)
@@ -3518,8 +3518,8 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
-  vue-quilly@1.0.2:
-    resolution: {integrity: sha512-5bkKpw7jMSrlZo7ZIO3WOBHV2cpXR7A4+2iqE60DenJkzU6ZJogU/5XqQyh9l6NStZoH7O6gjZfu1g4XsBN/bQ==}
+  vue-quilly@1.0.3:
+    resolution: {integrity: sha512-tWCba4x1NtumorsXVeHNF5XSOPzNvvbA1xEetlFyz6TN3NxB6iv3JCVmQjK+6N8vEsb5LBg2oRwnwMvlTDGxAw==}
     peerDependencies:
       quill: ^2.0.0
       vue: ^3.0.0
@@ -7702,7 +7702,7 @@ snapshots:
     dependencies:
       vue: 3.4.27
 
-  vue-quilly@1.0.2(quill@2.0.1)(vue@3.4.27):
+  vue-quilly@1.0.3(quill@2.0.1)(vue@3.4.27):
     dependencies:
       quill: 2.0.1
       vue: 3.4.27

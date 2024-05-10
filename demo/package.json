@@ -14,7 +14,7 @@
     "parchment": "^3.0.0",
     "quill": "^2.0.1",
     "vue": "^3.4.21",
-    "vue-quilly": "^1.0.2"
+    "vue-quilly": "^1.0.3"
   },
   "devDependencies": {
     "@types/katex": "^0.16.7",
