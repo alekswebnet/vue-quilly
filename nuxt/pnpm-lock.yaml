@@ -15,14 +15,14 @@ importers:
         specifier: ^3.11.2
         version: 3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.11)(@unocss/reset@0.59.4)(encoding@0.1.13)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.17.2))(vue@3.4.27))(ioredis@5.4.1)(rollup@4.17.2)(terser@5.31.0)(unocss@0.59.4(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.11)(terser@5.31.0))
       quill:
-        specifier: 2.0.1
-        version: 2.0.1
+        specifier: ^2.0.2
+        version: 2.0.2
       vue:
         specifier: ^3.4.21
         version: 3.4.27
       vue-quilly:
         specifier: ^1.0.3
-        version: 1.0.3(quill@2.0.1)(vue@3.4.27)
+        version: 1.0.3(quill@2.0.2)(vue@3.4.27)
       vue-router:
         specifier: ^4.3.0
         version: 4.3.2(vue@3.4.27)
@@ -2869,8 +2869,8 @@ packages:
     resolution: {integrity: sha512-X74oCeRI4/p0ucjb5Ma8adTXd9Scumz367kkMK5V/IatcX6A0vlgLgKbzXWy5nZmCGeNJm2oQX0d2Eqj+ZIlCA==}
     engines: {node: '>= 12.0.0'}
 
-  quill@2.0.1:
-    resolution: {integrity: sha512-HtZSieCRgGCfXkc0a4r+e4NlITvl1C1B2cpS+NyNsDskomj+MbfCcUlZ8JxgPCCwmq/vIDbYuyumDkJKVeBcXg==}
+  quill@2.0.2:
+    resolution: {integrity: sha512-QfazNrhMakEdRG57IoYFwffUIr04LWJxbS/ZkidRFXYCQt63c1gK6Z7IHUXMx/Vh25WgPBU42oBaNzQ0K1R/xw==}
     engines: {npm: '>=8.2.3'}
 
   radix3@1.1.2:
@@ -6987,7 +6987,7 @@ snapshots:
       lodash.clonedeep: 4.5.0
       lodash.isequal: 4.5.0
 
-  quill@2.0.1:
+  quill@2.0.2:
     dependencies:
       eventemitter3: 5.0.1
       lodash-es: 4.17.21
@@ -7702,9 +7702,9 @@ snapshots:
     dependencies:
       vue: 3.4.27
 
-  vue-quilly@1.0.3(quill@2.0.1)(vue@3.4.27):
+  vue-quilly@1.0.3(quill@2.0.2)(vue@3.4.27):
     dependencies:
-      quill: 2.0.1
+      quill: 2.0.2
       vue: 3.4.27
 
   vue-resize@2.0.0-alpha.1(vue@3.4.27):

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "quill": "^2.0.1",
+    "quill": "^2.0.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
