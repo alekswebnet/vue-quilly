@@ -30,9 +30,9 @@ No matter if you want to create full-featured editor with all Quill's modules or
 ## Setup
 
 ```bash
-npm install quill@2.0.1 vue-quilly
+npm install quill vue-quilly
 # Or
-pnpm add quill@2.0.1 vue-quilly
+pnpm add quill vue-quilly
 ```
 
 ## Get started
@@ -128,7 +128,7 @@ All events types:
 ## Nuxt
 
 You must build your editor, based on `VueQuilly` component first.
-Then put it inside `ClientOnly` component:
+Then put it inside `ClientOnly` component if you plan to use SSR:
 
 ```html
 <ClientOnly>
