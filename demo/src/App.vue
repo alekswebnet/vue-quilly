@@ -6,8 +6,8 @@ import { useUrlSearchParams } from '@vueuse/core'
 
 const params = useUrlSearchParams('hash-params')
 
-const isCustomTab = computed(() => !params.tab || params.tab === 'custom')
-const isDefaultTab = computed(() => params.tab === 'default')
+const isCustomTab = computed(() => params.tab === 'custom')
+const isDefaultTab = computed(() => !params.tab || params.tab === 'default')
 </script>
 
 <template>
