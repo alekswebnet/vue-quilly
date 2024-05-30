@@ -10,7 +10,7 @@ const params = useUrlSearchParams('hash-params')
 
 const isCustomTab = computed(() => params.tab === 'custom')
 const isDefaultSnowTab = computed(() => !params.tab || params.tab === 'snow')
-const isDefaultBubbleTab = computed(() => !params.tab || params.tab === 'bubble')
+const isDefaultBubbleTab = computed(() => params.tab === 'bubble')
 
 const mdSrc = `
 [![GitHub Release](https://img.shields.io/github/v/release/alekswebnet/vue-quilly)](https://github.com/alekswebnet/vue-quilly/releases)
@@ -19,6 +19,24 @@ const mdSrc = `
 [![NPM Type Definitions](https://img.shields.io/npm/types/vue-quilly)](https://www.npmjs.com/package/vue-quilly?activeTab=code)
 [![GitHub License](https://img.shields.io/github/license/alekswebnet/vue-quilly)](https://github.com/alekswebnet/vue-quilly?tab=readme-ov-file#license)
 `
+
+const menuItems = computed(() => [
+  {
+    title: 'Default Editor (Snow theme)',
+    tabKey: 'snow',
+    selected: isDefaultSnowTab.value
+  },
+  {
+    title: 'Default Editor (Bubble theme)',
+    tabKey: 'bubble',
+    selected: isDefaultBubbleTab.value
+  },
+  {
+    title: 'Custom Editor',
+    tabKey: 'custom',
+    selected: isCustomTab.value
+  }
+])
 </script>
 
 <template>
@@ -26,16 +44,16 @@ const mdSrc = `
     <h1>vue-quilly</h1>
     <p>Tiny Vue component, that helps to create Quill v2 based WYSIWYG editors</p>
     <vue-markdown :source="mdSrc" />
-    <div class="pure-menu pure-menu-horizontal">
+    <div class="pure-menu pure-menu-horizontal flex items-center">
       <ul class="pure-menu-list">
-        <li class="pure-menu-item" :class="{ 'pure-menu-selected': isDefaultSnowTab }">
-            <a href="#tab=snow" class="pure-menu-link">Default Editor (Snow theme)</a>
+        <li class="pure-menu-item" v-for="item in menuItems" :class="{ 'pure-menu-selected': item.selected }">
+          <a :href="`#tab=${item.tabKey}`" class="pure-menu-link">{{ item.title }}</a>
         </li>
-        <li class="pure-menu-item" :class="{ 'pure-menu-selected': isDefaultBubbleTab }">
-            <a href="#tab=bubble" class="pure-menu-link">Default Editor (Bubble theme)</a>
-        </li>
-        <li class="pure-menu-item" :class="{ 'pure-menu-selected': isCustomTab }">
-            <a href="#tab=custom" class="pure-menu-link">Custom Editor</a>
+        <li class="pure-menu-item" style="margin-left: auto">
+          <a href="https://github.com/alekswebnet/vue-quilly/tree/main/demo" target="_blank" class="pure-menu-link" style="color: #0078e7">
+            <span>Source code &nbsp;</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="#0078e7" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
         </li>
       </ul>
     </div>
@@ -61,6 +79,15 @@ body {
   font-size: 14px;
   text-rendering: optimizeSpeed;
 }
+.pure-menu-link {
+  display: inline-flex;
+  align-items: center;
+}
+.pure-menu-horizontal .pure-menu-list {
+  display: flex;
+  overflow-y: auto;
+  width: 100%;
+}
 .container {
   max-width: 1060px;
   width: 100%;
@@ -75,6 +102,11 @@ button + button {
 }
 .button-xsmall {
   font-size: 70%;
- }
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center!;
+}
 </style>
-./components/CustomEditor.vue./components/DefaultEditor.vue
