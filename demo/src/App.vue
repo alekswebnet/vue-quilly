@@ -5,11 +5,13 @@ import DefaultEditorSnow from './components/DefaultEditorSnow.vue'
 import DefaultEditorBubble from './components/DefaultEditorBubble.vue'
 import VueMarkdown from 'vue-markdown-render'
 import { useUrlSearchParams } from '@vueuse/core'
+import ImageResizeEditor from './components/ImageResizeEditor.vue';
 
 const params = useUrlSearchParams('hash-params')
 
 const isCustomTab = computed(() => params.tab === 'custom')
 const isDefaultSnowTab = computed(() => !params.tab || params.tab === 'snow')
+const isImageResizeTab = computed(() => params.tab === 'image-resize')
 const isDefaultBubbleTab = computed(() => params.tab === 'bubble')
 
 const mdSrc = `
@@ -30,6 +32,11 @@ const menuItems = computed(() => [
     title: 'Default Editor (Bubble theme)',
     tabKey: 'bubble',
     selected: isDefaultBubbleTab.value
+  },
+  {
+    title: 'Default Editor + quill-image-resize-module',
+    tabKey: 'image-resize',
+    selected: isImageResizeTab.value
   },
   {
     title: 'Custom Editor',
@@ -60,6 +67,7 @@ const menuItems = computed(() => [
     <hr>
     <DefaultEditorSnow v-if="isDefaultSnowTab" />
     <DefaultEditorBubble v-if="isDefaultBubbleTab" />
+    <ImageResizeEditor v-if="isImageResizeTab" />
     <CustomEditor v-if="isCustomTab" />
   </div>
 </template>

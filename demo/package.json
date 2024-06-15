@@ -13,6 +13,7 @@
     "katex": "^0.16.10",
     "parchment": "^3.0.0",
     "quill": "^2.0.2",
+    "quill-image-resize-module": "^3.0.0",
     "vue": "^3.4.21",
     "vue-markdown-render": "^2.2.1",
     "vue-quilly": "^1.0.4"
