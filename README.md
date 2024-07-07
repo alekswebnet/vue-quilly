@@ -29,13 +29,73 @@ No matter if you want to create full-featured editor with all Quill's modules or
 
 ## Setup
 
+**Browser:**
+
+```html
+<!-- Include Quill 2 -->
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+<!-- Import Vue and vue-quilly -->
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+      "vue-quilly": "https://unpkg.com/vue-quilly@1.0.4/dist/vue-quilly.js"
+    }
+  }
+</script>
+
+<!-- Initialize the editor -->
+<div id="app">
+  <quilly-editor ref="editor" v-model="model" :options="options" />
+</div>
+
+<script type="module">
+  import { createApp, ref, onMounted } from 'vue'
+  import { QuillyEditor } from 'vue-quilly'
+
+  createApp({
+    setup() {
+      const options = {
+        theme: 'snow',
+        modules: {
+          toolbar: true,
+        },
+        placeholder: 'Compose an epic...',
+        readOnly: false
+      }
+      
+      const editor = ref()
+      const model = ref('<p>Hello Quilly!</p>')
+      let quill = null
+      
+      onMounted(() => {
+        quill = editor.value.initialize(Quill)
+      })
+      
+      return {
+        editor,
+        options,
+        model
+      }
+    }
+  })
+    .component('QuillyEditor', QuillyEditor)
+    .mount('#app')
+</script>
+```
+Browser setup demo - https://codepen.io/redrobot753/pen/VwJwPLP
+
+**Bundlers:**
+
 ```bash
 npm install quill vue-quilly
 # Or
+yarn add quill vue-quilly
+# Or
 pnpm add quill vue-quilly
 ```
-
-## Get started
 
 Import Quill full build if you need all modules or [core build](https://quilljs.com/docs/installation#core-build) with minimum required modules:
 
