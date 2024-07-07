@@ -3,7 +3,9 @@ import Quill, { Delta, EmitterSource, QuillOptions, Range } from 'quill/core'
 import { onBeforeUnmount, ref, watch } from 'vue'
 
 const props = defineProps<{
-  modelValue?: string
+  // HTML model value, supports v-model
+  modelValue?: string | null
+  // Quill initialization options
   options?: QuillOptions
 }>()
 
@@ -25,21 +27,20 @@ const emit = defineEmits<{
 
 let quillInstance: Quill | null = null
 const container = ref<HTMLElement>()
-const model = ref<string>()
+const model = ref<string | null>()
 
 // Convert modelValue HTML to Delta and replace editor content
 const pasteHTML = (quill: Quill) => {
   model.value = props.modelValue
   const oldContent = quill.getContents()
-  const delta = quill.clipboard.convert({ html: props.modelValue })
+  const delta = quill.clipboard.convert({ html: props.modelValue ?? '' })
   quill.setContents(delta)
   emit('text-change', { delta, oldContent, source: 'api' })
-  return delta
 }
 
 // Editor initialization, returns Quill instance
 const initialize = (QuillClass: typeof Quill) => {
-  const quill = new QuillClass(container.value!, props.options)
+  const quill = new QuillClass(container.value as HTMLElement, props.options)
 
   // Set editor initial model
   if (props.modelValue) {
@@ -78,25 +79,29 @@ const initialize = (QuillClass: typeof Quill) => {
 watch(
   () => props.modelValue,
   (newValue) => {
+    if (!quillInstance) return
     if (newValue && newValue !== model.value) {
-      pasteHTML(quillInstance!)
-      model.value = quillInstance!.root.innerHTML
+      pasteHTML(quillInstance)
+      model.value = quillInstance.root.innerHTML
     } else if (!newValue) {
-      quillInstance!.setContents([])
+      quillInstance.setContents([])
     }
   }
 )
 
 // Watch model and update modelValue if has changes
 watch(model, (newValue, oldValue) => {
+  if (!quillInstance) return
   if (newValue && newValue !== oldValue) {
     emit('update:modelValue', newValue)
   } else if (!newValue) {
-    quillInstance!.setContents([])
+    quillInstance.setContents([])
   }
 })
 
-onBeforeUnmount(() => quillInstance = null)
+onBeforeUnmount(() => {
+  quillInstance = null
+})
 
 // Expose init function
 defineExpose<{
