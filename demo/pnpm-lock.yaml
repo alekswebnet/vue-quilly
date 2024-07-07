@@ -30,8 +30,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.1(vue@3.4.24(typescript@5.4.5))
       vue-quilly:
-        specifier: ^1.0.4
-        version: 1.0.4(quill@2.0.2)(vue@3.4.24(typescript@5.4.5))
+        specifier: ^1.0.5
+        version: 1.0.5(quill@2.0.2)(vue@3.4.24(typescript@5.4.5))
     devDependencies:
       '@types/katex':
         specifier: ^0.16.7
@@ -666,8 +666,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  vue-quilly@1.0.4:
-    resolution: {integrity: sha512-D4voVwxQUOfGfZpFLbjIFpFsCU/Sx0+LsRUMd3BnEAyDBIOn8EaQ20DRv78YbNqaY+dERDee/aMlLqAW185DbA==}
+  vue-quilly@1.0.5:
+    resolution: {integrity: sha512-+Z49uYDXJi1gPezFUkRFRirtX9jPaSmg6WMX879XXRluQeeLdlsdHj2c9KmyuHiZf4f0uVsvo3R3tD+vbzSlzA==}
     peerDependencies:
       quill: ^2.0.0
       vue: ^3.0.0
@@ -1254,7 +1254,7 @@ snapshots:
       markdown-it: 13.0.2
       vue: 3.4.24(typescript@5.4.5)
 
-  vue-quilly@1.0.4(quill@2.0.2)(vue@3.4.24(typescript@5.4.5)):
+  vue-quilly@1.0.5(quill@2.0.2)(vue@3.4.24(typescript@5.4.5)):
     dependencies:
       quill: 2.0.2
       vue: 3.4.24(typescript@5.4.5)
