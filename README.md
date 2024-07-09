@@ -41,7 +41,7 @@ No matter if you want to create full-featured editor with all Quill's modules or
   {
     "imports": {
       "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
-      "vue-quilly": "https://unpkg.com/vue-quilly@1.0.4/dist/vue-quilly.js"
+      "vue-quilly": "https://unpkg.com/vue-quilly@1.0.5/dist/vue-quilly.js"
     }
   }
 </script>
