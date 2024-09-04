@@ -89,6 +89,8 @@ const onEditorChange = (eventName: string) => console.log(eventName)
     Set contents
   </button>
   <button class="pure-button" @click="quill?.setContents([])">Reset contents</button>
+  <p class="text-label">SEMANTIC HTML:</p>
+  <p>{{ quill?.getSemanticHTML() }}</p>
   <p class="text-label">LAST CHANGE:</p>
   <p>{{ editorDelta }}</p>
   <p class="text-label">CURRENT SELECTION:</p>
