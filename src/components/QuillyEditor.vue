@@ -59,7 +59,7 @@ const initialize = (QuillClass: typeof Quill) => {
 
   // Handle editor text change
   quill.on('text-change', (delta, oldContent, source) => {
-    model.value = quill.root.innerHTML
+    model.value = quill.getSemanticHTML()
     emit('text-change', { delta, oldContent, source })
   })
 
@@ -82,7 +82,7 @@ watch(
     if (!quillInstance) return
     if (newValue && newValue !== model.value) {
       pasteHTML(quillInstance)
-      model.value = quillInstance.root.innerHTML
+      model.value = quillInstance.getSemanticHTML()
     } else if (!newValue) {
       quillInstance.setContents([])
     }
