@@ -151,7 +151,13 @@ onMounted(() => {
 />
 ```
 
-Use `v-model` for HTML content type. You can set content in Delta format using Quill instance:
+⚠️ Use `v-model` for HTML content type. The received content is equal to Quill's editor element `innerHTML` property value.
+
+In some cases it will be better to use `quill.semanticHTML()` to get a clean HTML output:
+
+`@update:modelValue="(/* ignore the new value */) => { /* update the model using quill!.getSemanticHTML() */ }"`
+
+Also you can set content in Delta format using Quill instance:
 
 ```ts
 quill?.setContents(
