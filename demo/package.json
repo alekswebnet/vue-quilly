@@ -16,7 +16,7 @@
     "quill-image-resize-module": "^3.0.0",
     "vue": "^3.4.21",
     "vue-markdown-render": "^2.2.1",
-    "vue-quilly": "^1.0.5"
+    "vue-quilly": "^1.1.0"
   },
   "devDependencies": {
     "@types/katex": "^0.16.7",
