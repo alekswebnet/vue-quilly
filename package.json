@@ -1,7 +1,7 @@
 {
   "name": "vue-quilly",
   "private": false,
-  "version": "1.0.5",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -72,5 +72,6 @@
   "peerDependencies": {
     "quill": "^2.0.0",
     "vue": "^3.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.12.1+sha256.91452fdfa46234ae447d46d5c4fc4e7e0a7058f90495c4b6f77f8beebbb154e3"
 }

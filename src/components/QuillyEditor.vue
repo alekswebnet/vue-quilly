@@ -7,6 +7,7 @@ const props = defineProps<{
   modelValue?: string | null
   // Quill initialization options
   options?: QuillOptions
+  isSemanticHtmlModel?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -59,7 +60,7 @@ const initialize = (QuillClass: typeof Quill) => {
 
   // Handle editor text change
   quill.on('text-change', (delta, oldContent, source) => {
-    model.value = quill.root.innerHTML
+    model.value = props.isSemanticHtmlModel ? quill.getSemanticHTML() : quill.root.innerHTML
     emit('text-change', { delta, oldContent, source })
   })
 
@@ -82,7 +83,10 @@ watch(
     if (!quillInstance) return
     if (newValue && newValue !== model.value) {
       pasteHTML(quillInstance)
-      model.value = quillInstance.root.innerHTML
+      // Update HTML model depending on type
+      model.value = props.isSemanticHtmlModel 
+        ? quillInstance.getSemanticHTML() 
+        : quillInstance.root.innerHTML
     } else if (!newValue) {
       quillInstance.setContents([])
     }

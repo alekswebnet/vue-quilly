@@ -153,9 +153,7 @@ onMounted(() => {
 
 ⚠️ Use `v-model` for HTML content type. The received content is equal to Quill's editor element `innerHTML` property value.
 
-In some cases it will be better to use `quill.semanticHTML()` to get a clean HTML output:
-
-`@update:modelValue="(/* ignore the new value */) => { /* update the model using quill!.getSemanticHTML() */ }"`
+In some cases it will be better to use `quill.semanticHTML()` to get a clean HTML output. For doing this just set a property `:is-semantic-html-model="true"`. See [SemanticHTMLEditor example](https://github.com/alekswebnet/vue-quilly/tree/main/demo/src/components/SemanticHTMLEditor.vue).
 
 Also you can set content in Delta format using Quill instance:
 

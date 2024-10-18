@@ -6,9 +6,11 @@ import DefaultEditorBubble from './components/DefaultEditorBubble.vue'
 import VueMarkdown from 'vue-markdown-render'
 import { useUrlSearchParams } from '@vueuse/core'
 import ImageResizeEditor from './components/ImageResizeEditor.vue';
+import SemanticHTMLEditor from './components/SemanticHTMLEditor.vue'
 
 const params = useUrlSearchParams('hash-params')
 
+const isSemanticTab = computed(() => params.tab === 'semantic')
 const isCustomTab = computed(() => params.tab === 'custom')
 const isDefaultSnowTab = computed(() => !params.tab || params.tab === 'snow')
 const isImageResizeTab = computed(() => params.tab === 'image-resize')
@@ -34,6 +36,11 @@ const menuItems = computed(() => [
     selected: isDefaultBubbleTab.value
   },
   {
+    title: 'Default Editor with semantic HTML model',
+    tabKey: 'semantic',
+    selected: isSemanticTab.value
+  },
+  {
     title: 'Default Editor + quill-image-resize-module',
     tabKey: 'image-resize',
     selected: isImageResizeTab.value
@@ -51,22 +58,23 @@ const menuItems = computed(() => [
     <h1>vue-quilly</h1>
     <p>Tiny Vue component, that helps to create Quill v2 based WYSIWYG editors</p>
     <vue-markdown :source="mdSrc" />
-    <div class="pure-menu pure-menu-horizontal flex items-center">
+    <nav class="nav">
       <ul class="pure-menu-list">
-        <li class="pure-menu-item" v-for="item in menuItems" :class="{ 'pure-menu-selected': item.selected }">
+        <li v-for="item in menuItems" :class="{ 'pure-menu-selected': item.selected }">
           <a :href="`#tab=${item.tabKey}`" class="pure-menu-link">{{ item.title }}</a>
         </li>
-        <li class="pure-menu-item" style="margin-left: auto">
+        <li style="margin-left: auto">
           <a href="https://github.com/alekswebnet/vue-quilly/tree/main/demo" target="_blank" class="pure-menu-link" style="color: #0078e7">
             <span>Source code &nbsp;</span>
             <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="#0078e7" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
     <hr>
     <DefaultEditorSnow v-if="isDefaultSnowTab" />
     <DefaultEditorBubble v-if="isDefaultBubbleTab" />
+    <SemanticHTMLEditor v-if="isSemanticTab" />
     <ImageResizeEditor v-if="isImageResizeTab" />
     <CustomEditor v-if="isCustomTab" />
   </div>
@@ -91,11 +99,6 @@ body {
   display: inline-flex;
   align-items: center;
 }
-.pure-menu-horizontal .pure-menu-list {
-  display: flex;
-  overflow-y: auto;
-  width: 100%;
-}
 .container {
   max-width: 1060px;
   width: 100%;
@@ -114,7 +117,14 @@ button + button {
 .flex {
   display: flex;
 }
+.nav {
+  display: flex;
+}
+.nav .pure-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 .items-center {
-  align-items: center!;
+  align-items: center;
 }
 </style>
