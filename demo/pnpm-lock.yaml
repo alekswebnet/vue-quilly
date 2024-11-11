@@ -38,13 +38,13 @@ importers:
         version: 0.16.7
       '@vitejs/plugin-vue':
         specifier: ^5.0.4
-        version: 5.0.4(vite@5.2.10)(vue@3.4.24(typescript@5.4.5))
+        version: 5.0.4(vite@5.2.14)(vue@3.4.24(typescript@5.4.5))
       typescript:
         specifier: ^5.2.2
         version: 5.4.5
       vite:
-        specifier: ^5.2.0
-        version: 5.2.10
+        specifier: ^5.2.14
+        version: 5.2.14
       vue-tsc:
         specifier: ^2.0.6
         version: 2.0.14(typescript@5.4.5)
@@ -632,8 +632,8 @@ packages:
   uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
-  vite@5.2.10:
-    resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==}
+  vite@5.2.14:
+    resolution: {integrity: sha512-TFQLuwWLPms+NBNlh0D9LZQ+HXW471COABxw/9TEUBrjuHMo9BrYBPrN/SYAwIuVL+rLerycxiLT41t4f5MZpA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -849,9 +849,9 @@ snapshots:
 
   '@types/web-bluetooth@0.0.20': {}
 
-  '@vitejs/plugin-vue@5.0.4(vite@5.2.10)(vue@3.4.24(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.0.4(vite@5.2.14)(vue@3.4.24(typescript@5.4.5))':
     dependencies:
-      vite: 5.2.10
+      vite: 5.2.14
       vue: 3.4.24(typescript@5.4.5)
 
   '@volar/language-core@2.2.0-alpha.10':
@@ -1255,7 +1255,7 @@ snapshots:
 
   uc.micro@1.0.6: {}
 
-  vite@5.2.10:
+  vite@5.2.14:
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
