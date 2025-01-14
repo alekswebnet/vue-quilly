@@ -206,7 +206,7 @@ See [Nuxt 3 example](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/ap
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Inspiration projects and useful links
+## Acknowledgments
 
 https://github.com/quilljs/quill
 
