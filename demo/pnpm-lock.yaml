@@ -12,8 +12,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0(typescript@5.6.3)
       katex:
-        specifier: ^0.16.11
-        version: 0.16.11
+        specifier: ^0.16.21
+        version: 0.16.21
       parchment:
         specifier: ^3.0.0
         version: 3.0.0
@@ -513,8 +513,8 @@ packages:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
 
-  katex@0.16.11:
-    resolution: {integrity: sha512-RQrI8rlHY92OLf3rho/Ts8i/XvjgguEjOkO1BEXcU3N8BqPpSzBNwV/G0Ukr+P/l3ivvJUE/Fa/CwbS6HesGNQ==}
+  katex@0.16.21:
+    resolution: {integrity: sha512-XvqR7FgOHtWupfMiigNzmh+MgUVmDGU2kXZm899ZkPfcuoPuFxyHmXsgATDpFZDAXCI8tvinaVcDo8PIIJSo4A==}
     hasBin: true
 
   linkify-it@4.0.1:
@@ -1103,7 +1103,7 @@ snapshots:
       call-bind: 1.0.7
       has-tostringtag: 1.0.2
 
-  katex@0.16.11:
+  katex@0.16.21:
     dependencies:
       commander: 8.3.0
 

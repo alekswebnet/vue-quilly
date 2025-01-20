@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^12.0.0",
-    "katex": "^0.16.11",
+    "katex": "^0.16.21",
     "parchment": "^3.0.0",
     "quill": "^2.0.2",
     "quill-image-resize-module": "^3.0.0",
