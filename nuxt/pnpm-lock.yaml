@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       katex:
-        specifier: ^0.16.10
-        version: 0.16.11
+        specifier: ^0.16.21
+        version: 0.16.21
       quill:
         specifier: ^2.0.2
         version: 2.0.2
@@ -18,8 +18,8 @@ importers:
         specifier: ^3.4.21
         version: 3.5.13(typescript@5.7.2)
       vue-quilly:
-        specifier: ^1.0.5
-        version: 1.1.0(quill@2.0.2)(vue@3.5.13(typescript@5.7.2))
+        specifier: ^1.1.2
+        version: 1.1.2(quill@2.0.2)(vue@3.5.13(typescript@5.7.2))
       vue-router:
         specifier: ^4.3.0
         version: 4.5.0(vue@3.5.13(typescript@5.7.2))
@@ -1877,8 +1877,8 @@ packages:
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
-  katex@0.16.11:
-    resolution: {integrity: sha512-RQrI8rlHY92OLf3rho/Ts8i/XvjgguEjOkO1BEXcU3N8BqPpSzBNwV/G0Ukr+P/l3ivvJUE/Fa/CwbS6HesGNQ==}
+  katex@0.16.21:
+    resolution: {integrity: sha512-XvqR7FgOHtWupfMiigNzmh+MgUVmDGU2kXZm899ZkPfcuoPuFxyHmXsgATDpFZDAXCI8tvinaVcDo8PIIJSo4A==}
     hasBin: true
 
   kleur@3.0.3:
@@ -3017,8 +3017,8 @@ packages:
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
-  vue-quilly@1.1.0:
-    resolution: {integrity: sha512-mzevF8kLPuqgKqM8E9PQHH+tuEDLt98/ct+tUypNMbkLPcad5keuT6mjR7hm5ARRUJC3mXlqvYdysJ3MJWx8Sg==}
+  vue-quilly@1.1.2:
+    resolution: {integrity: sha512-KuYbHvy3QxiIkEpikwy65gP20GwhbbdoNCudAhXyfAXfwy9XkmH0xs8pa+/T5lcacLFdeHg623TDrDTey9ZSfg==}
     peerDependencies:
       quill: ^2.0.0
       vue: ^3.0.0
@@ -5084,7 +5084,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  katex@0.16.11:
+  katex@0.16.21:
     dependencies:
       commander: 8.3.0
 
@@ -6390,7 +6390,7 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-quilly@1.1.0(quill@2.0.2)(vue@3.5.13(typescript@5.7.2)):
+  vue-quilly@1.1.2(quill@2.0.2)(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       quill: 2.0.2
       vue: 3.5.13(typescript@5.7.2)
