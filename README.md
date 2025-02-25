@@ -33,8 +33,8 @@ No matter if you want to create full-featured editor with all Quill's modules or
 
 ```html
 <!-- Include Quill 2 -->
-<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
 <!-- Import Vue and vue-quilly -->
 <script type="importmap">

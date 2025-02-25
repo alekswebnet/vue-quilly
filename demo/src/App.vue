@@ -95,6 +95,9 @@ body {
   font-size: 14px;
   text-rendering: optimizeSpeed;
 }
+p {
+  word-break: break-all;
+}
 .pure-menu-link {
   display: inline-flex;
   align-items: center;

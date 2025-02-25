@@ -9,15 +9,14 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "devDependencies": {
+    "nuxt": "^3.15.4"
+  },
   "dependencies": {
     "katex": "^0.16.21",
-    "quill": "^2.0.2",
-    "vue": "^3.4.21",
+    "quill": "^2.0.3",
+    "vue": "^3.5.13",
     "vue-quilly": "^1.1.2",
-    "vue-router": "^4.3.0"
-  },
-  "devDependencies": {
-    "@types/katex": "^0.16.7",
-    "nuxt": "^3.14.1592"
+    "vue-router": "^4.5.0"
   }
 }

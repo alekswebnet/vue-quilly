@@ -8,7 +8,7 @@ import katex from 'katex'
 import 'katex/dist/katex.min.css'
 
 // Expose Katex plugin to global window object
-window.katex = katex
+(window.katex as typeof katex) = katex
 // Expose Quill to global window object
 window.Quill = Quill
 
