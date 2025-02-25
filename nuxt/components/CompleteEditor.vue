@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { QuillyEditor } from 'vue-quilly'
-import { Delta, Range } from 'quill/core'
-import Quill from 'quill'
+import Quill, { Delta, Range } from 'quill/core'
 import 'quill/dist/quill.snow.css'
 import katex from 'katex'
 import 'katex/dist/katex.min.css'
@@ -34,8 +33,11 @@ const options = ref({
   readOnly: false
 })
 
-onMounted(() => {
-  quill = editor.value?.initialize(Quill)!
+onMounted(async () => {
+  if (import.meta.client) {
+    const QuillClass = (await import('quill')).default
+    quill = editor.value?.initialize(QuillClass) as Quill
+  }
 })
 
 const onModelValueChange = (value: string) => console.log(value)
