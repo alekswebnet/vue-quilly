@@ -191,15 +191,6 @@ All events types:
 
 ## Nuxt
 
-You must build your editor, based on `VueQuilly` component first.
-Then put it inside `ClientOnly` component if you plan to use SSR:
-
-```html
-<ClientOnly>
-  <CompleteEditor />
-</ClientOnly>
-```
-
 See [Nuxt 3 example](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/app.vue).
 
 ## License
