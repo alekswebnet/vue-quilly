@@ -197,6 +197,10 @@ See [Nuxt 3 example](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/ap
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+## Support project
+
+[![Backers on Open Collective](https://opencollective.com/oleksandr-shevchuk/backers/badge.svg)](https://opencollective.com/oleksandr-shevchuk)
+
 ## Acknowledgments
 
 https://github.com/quilljs/quill
