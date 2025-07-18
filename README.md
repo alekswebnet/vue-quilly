@@ -27,6 +27,14 @@ No matter if you want to create full-featured editor with all Quill's modules or
 - Works with both HTML and Quill Delta format
 - Typescript support
 
+## Support via Ko-fi
+
+If you find `vue-quilly` useful and want to support its development, consider making a donation via Ko-fi:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/oleksandrshevchuk)
+
+> ❤️ Your support helps with maintenance, bug fixes, and long-term improvements.
+
 ## Setup
 
 **Browser:**
@@ -196,10 +204,6 @@ See [Nuxt 3 example](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/ap
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## Support project
-
-[![Backers on Open Collective](https://opencollective.com/oleksandr-shevchuk/backers/badge.svg)](https://opencollective.com/oleksandr-shevchuk)
 
 ## Acknowledgments
 
