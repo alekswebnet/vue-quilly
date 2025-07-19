@@ -11,9 +11,9 @@ It's not a all-in-one solution and requires further Quill configuration.
 In other hand, you can build your own editor, that matches your needs, with easy.
 No matter if you want to create full-featured editor with all Quill's modules or small custom solution with extra functionality, you can use this package as a base start point:
 
-⭐ Run [demo](https://vue-quilly.vercel.app/), that shows editors, builded upon `QuillyEditor` component.
-⭐ See editors [example](https://github.com/alekswebnet/vue-quilly/blob/main/demo/).
-⭐ Create editors with [Nuxt 4](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/app/app.vue).
+- Run [demo](https://vue-quilly.vercel.app/), that shows editors, builded upon `QuillyEditor` component.
+- See editors [example](https://github.com/alekswebnet/vue-quilly/blob/main/demo/).
+- Create editors with [Nuxt 4](https://github.com/alekswebnet/vue-quilly/blob/main/nuxt/app/app.vue).
 
 Default input data format is HTML, but also has [Delta](https://quilljs.com/docs/delta) support - using Quill API and exposed Quill instance.
 In short, HTML and Delta inputs works in a same way, you can use one of them or both formats to change editor data model.
