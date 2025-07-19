@@ -34,7 +34,9 @@
     "vue",
     "vuejs",
     "vue-component",
-    "vue-quill"
+    "vue-quill",
+    "nuxt",
+    "nuxt4"
   ],
   "main": "./dist/vue-quilly.umd.cjs",
   "module": "./dist/vue-quilly.js",
