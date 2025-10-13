@@ -10,7 +10,7 @@ const model = ref<string>(`<h1>Hello world!</h1><p><strong>bold</strong></p><ol>
 const editorDelta = ref<Delta>()
 const editorRange = ref<Range>()
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options = ref({
   theme: 'snow',
@@ -32,7 +32,7 @@ const options = ref({
 })
 
 onMounted(() => {
-  quill = editor.value?.initialize(Quill)!
+  quill = editor.value?.initialize(Quill)
 })
 
 const onModelValueChange = (value: string) => console.log(value)

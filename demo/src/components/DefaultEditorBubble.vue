@@ -13,7 +13,7 @@ const model = ref<string>(`<h1 class="ql-align-center"><span style="background-c
 const editorDelta = ref<Delta>()
 const editorRange = ref<Range>()
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options = ref({
   theme: 'bubble',
@@ -35,7 +35,7 @@ const options = ref({
 })
 
 onMounted(() => {
-  quill = editor.value?.initialize(Quill)!
+  quill = editor.value?.initialize(Quill)
 })
 
 const onModelValueChange = (value: string) => console.log(value)

@@ -18,7 +18,7 @@ const model = ref<string>(`<h1 class="ql-align-center"><span style="background-c
 const editorDelta = ref<Delta>()
 const editorRange = ref<Range>()
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options = ref({
   theme: 'snow',
@@ -45,8 +45,8 @@ const options = ref({
 onMounted(async () => {
   window.Quill.imports.parchment.Attributor.Style = window.Quill.imports.parchment.StyleAttributor
   // @ts-ignore
-  const QuillImageResize = await import('quill-image-resize-module');
-  quill = editor.value?.initialize(window.Quill)!
+  const QuillImageResize = await import('quill-image-resize-module')
+  quill = editor.value?.initialize(window.Quill)
 })
 
 const onModelValueChange = (value: string) => console.log(value)

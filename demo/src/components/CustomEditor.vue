@@ -10,31 +10,30 @@ const model = ref<string>('<h1>Hello world!</h1><p>I am a new paragraph</p>')
 const editorDelta = ref<Delta>()
 const editorRange = ref<Range>()
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const Inline  = Quill.import('blots/inline') as BlotConstructor
 const Block = Quill.import('blots/block') as BlotConstructor
 
 class BoldBlot extends Inline {}
-BoldBlot.blotName = 'bold';
-BoldBlot.tagName = 'strong';
+BoldBlot.blotName = 'bold'
+BoldBlot.tagName = 'strong'
 
 class ItalicBlot extends Inline { }
-ItalicBlot.blotName = 'italic';
-ItalicBlot.tagName = 'em';
+ItalicBlot.blotName = 'italic'
+ItalicBlot.tagName = 'em'
 
 class HeaderBlot extends Block {
   static formats(node: Element) {
     return HeaderBlot.tagName.indexOf(node.tagName) + 1;
   }
 }
-HeaderBlot.blotName = 'header';
-HeaderBlot.tagName = ['H1', 'H2'];
+HeaderBlot.blotName = 'header'
+HeaderBlot.tagName = ['H1', 'H2']
 
-
-Quill.register(BoldBlot);
-Quill.register(ItalicBlot);
-Quill.register(HeaderBlot);
+Quill.register(BoldBlot)
+Quill.register(ItalicBlot)
+Quill.register(HeaderBlot)
 
 const options = {
   placeholder: 'Start your story here...',
