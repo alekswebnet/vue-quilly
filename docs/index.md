@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /get-started
+      link: /guide/getting-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/alekswebnet/vue-quilly

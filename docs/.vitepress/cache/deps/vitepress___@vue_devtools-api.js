@@ -28,7 +28,7 @@ var isInChromePanel = typeof target.chrome !== "undefined" && !!target.chrome.de
 var isInIframe = isBrowser && target.self !== target.top;
 var isInElectron = typeof navigator !== "undefined" && navigator.userAgent?.toLowerCase().includes("electron");
 var isNuxtApp = typeof window !== "undefined" && !!window.__NUXT__;
-var require_rfdc = __commonJS({ "../../node_modules/.pnpm/rfdc@1.4.1/node_modules/rfdc/index.js": (exports, module) => {
+var require_rfdc = __commonJS({ "../../node_modules/.pnpm/rfdc@1.4.1/node_modules/rfdc/index.js": ((exports, module) => {
   module.exports = rfdc$1;
   function copyBuffer(cur) {
     if (cur instanceof Buffer) return Buffer.from(cur);
@@ -160,7 +160,7 @@ var require_rfdc = __commonJS({ "../../node_modules/.pnpm/rfdc@1.4.1/node_module
       return o2;
     }
   }
-} });
+}) });
 var import_rfdc = __toESM(require_rfdc(), 1);
 var classifyRE = /(?:^|[-_/])(\w)/g;
 function toUpper(_, c) {
@@ -844,14 +844,14 @@ function getComponentInspector() {
     else setup();
   });
 }
-var ReactiveFlags = function(ReactiveFlags$1) {
+var ReactiveFlags = (function(ReactiveFlags$1) {
   ReactiveFlags$1["SKIP"] = "__v_skip";
   ReactiveFlags$1["IS_REACTIVE"] = "__v_isReactive";
   ReactiveFlags$1["IS_READONLY"] = "__v_isReadonly";
   ReactiveFlags$1["IS_SHALLOW"] = "__v_isShallow";
   ReactiveFlags$1["RAW"] = "__v_raw";
   return ReactiveFlags$1;
-}({});
+})({});
 function isReadonly(value) {
   return !!(value && value[ReactiveFlags.IS_READONLY]);
 }
@@ -1027,7 +1027,7 @@ function getActiveInspectors() {
 function getInspector(id, app) {
   return devtoolsInspector.find((inspector) => inspector.options.id === id && (app ? inspector.descriptor.app === app : true));
 }
-var DevToolsV6PluginAPIHookKeys = function(DevToolsV6PluginAPIHookKeys$1) {
+var DevToolsV6PluginAPIHookKeys = (function(DevToolsV6PluginAPIHookKeys$1) {
   DevToolsV6PluginAPIHookKeys$1["VISIT_COMPONENT_TREE"] = "visitComponentTree";
   DevToolsV6PluginAPIHookKeys$1["INSPECT_COMPONENT"] = "inspectComponent";
   DevToolsV6PluginAPIHookKeys$1["EDIT_COMPONENT_STATE"] = "editComponentState";
@@ -1038,8 +1038,8 @@ var DevToolsV6PluginAPIHookKeys = function(DevToolsV6PluginAPIHookKeys$1) {
   DevToolsV6PluginAPIHookKeys$1["TIMELINE_CLEARED"] = "timelineCleared";
   DevToolsV6PluginAPIHookKeys$1["SET_PLUGIN_SETTINGS"] = "setPluginSettings";
   return DevToolsV6PluginAPIHookKeys$1;
-}({});
-var DevToolsContextHookKeys = function(DevToolsContextHookKeys$1) {
+})({});
+var DevToolsContextHookKeys = (function(DevToolsContextHookKeys$1) {
   DevToolsContextHookKeys$1["ADD_INSPECTOR"] = "addInspector";
   DevToolsContextHookKeys$1["SEND_INSPECTOR_TREE"] = "sendInspectorTree";
   DevToolsContextHookKeys$1["SEND_INSPECTOR_STATE"] = "sendInspectorState";
@@ -1052,8 +1052,8 @@ var DevToolsContextHookKeys = function(DevToolsContextHookKeys$1) {
   DevToolsContextHookKeys$1["COMPONENT_HIGHLIGHT"] = "componentHighlight";
   DevToolsContextHookKeys$1["COMPONENT_UNHIGHLIGHT"] = "componentUnhighlight";
   return DevToolsContextHookKeys$1;
-}({});
-var DevToolsMessagingHookKeys = function(DevToolsMessagingHookKeys$1) {
+})({});
+var DevToolsMessagingHookKeys = (function(DevToolsMessagingHookKeys$1) {
   DevToolsMessagingHookKeys$1["SEND_INSPECTOR_TREE_TO_CLIENT"] = "sendInspectorTreeToClient";
   DevToolsMessagingHookKeys$1["SEND_INSPECTOR_STATE_TO_CLIENT"] = "sendInspectorStateToClient";
   DevToolsMessagingHookKeys$1["SEND_TIMELINE_EVENT_TO_CLIENT"] = "sendTimelineEventToClient";
@@ -1063,7 +1063,7 @@ var DevToolsMessagingHookKeys = function(DevToolsMessagingHookKeys$1) {
   DevToolsMessagingHookKeys$1["DEVTOOLS_CONNECTED_UPDATED"] = "devtoolsConnectedUpdated";
   DevToolsMessagingHookKeys$1["ROUTER_INFO_UPDATED"] = "routerInfoUpdated";
   return DevToolsMessagingHookKeys$1;
-}({});
+})({});
 function createDevToolsCtxHooks() {
   const hooks$1 = createHooks();
   hooks$1.hook(DevToolsContextHookKeys.ADD_INSPECTOR, ({ inspector, plugin }) => {
@@ -1352,7 +1352,7 @@ function setPluginSettings(pluginId, key, value) {
     }));
   }, DevToolsV6PluginAPIHookKeys.SET_PLUGIN_SETTINGS);
 }
-var DevToolsHooks = function(DevToolsHooks$1) {
+var DevToolsHooks = (function(DevToolsHooks$1) {
   DevToolsHooks$1["APP_INIT"] = "app:init";
   DevToolsHooks$1["APP_UNMOUNT"] = "app:unmount";
   DevToolsHooks$1["COMPONENT_UPDATED"] = "component:updated";
@@ -1368,7 +1368,7 @@ var DevToolsHooks = function(DevToolsHooks$1) {
   DevToolsHooks$1["APP_CONNECTED"] = "app:connected";
   DevToolsHooks$1["SETUP_DEVTOOLS_PLUGIN"] = "devtools-plugin:setup";
   return DevToolsHooks$1;
-}({});
+})({});
 var devtoolsHooks = target.__VUE_DEVTOOLS_HOOK ??= createHooks();
 var on = {
   vueAppInit(fn) {
@@ -1753,7 +1753,7 @@ target.__VUE_DEVTOOLS_KIT_CONTEXT__ ??= {
   api: createDevToolsApi(hooks)
 };
 var devtoolsContext = target.__VUE_DEVTOOLS_KIT_CONTEXT__;
-var require_speakingurl$1 = __commonJS2({ "../../node_modules/.pnpm/speakingurl@14.0.1/node_modules/speakingurl/lib/speakingurl.js": (exports, module) => {
+var require_speakingurl$1 = __commonJS2({ "../../node_modules/.pnpm/speakingurl@14.0.1/node_modules/speakingurl/lib/speakingurl.js": ((exports, module) => {
   (function(root) {
     var charMap = {
       "À": "A",
@@ -3168,10 +3168,10 @@ var require_speakingurl$1 = __commonJS2({ "../../node_modules/.pnpm/speakingurl@
     } catch (e) {
     }
   })(exports);
-} });
-var require_speakingurl = __commonJS2({ "../../node_modules/.pnpm/speakingurl@14.0.1/node_modules/speakingurl/index.js": (exports, module) => {
+}) });
+var require_speakingurl = __commonJS2({ "../../node_modules/.pnpm/speakingurl@14.0.1/node_modules/speakingurl/index.js": ((exports, module) => {
   module.exports = require_speakingurl$1();
-} });
+}) });
 var import_speakingurl = __toESM2(require_speakingurl(), 1);
 var appRecordInfo = target.__VUE_DEVTOOLS_NEXT_APP_RECORD_INFO__ ??= {
   id: 0,
