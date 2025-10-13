@@ -10,18 +10,18 @@
   },
   "dependencies": {
     "@vueuse/core": "^12.8.2",
-    "katex": "^0.16.22",
+    "katex": "^0.16.25",
     "parchment": "^3.0.0",
     "quill": "^2.0.3",
     "quill-image-resize-module": "^3.0.0",
-    "vue": "^3.5.17",
-    "vue-markdown-render": "^2.2.1",
+    "vue": "^3.5.22",
+    "vue-markdown-render": "^2.3.0",
     "vue-quilly": "^1.1.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.4",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.6",
     "vue-tsc": "^2.2.12"
   }
 }
