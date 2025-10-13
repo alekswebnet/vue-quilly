@@ -58,7 +58,7 @@ Use Quill's Delta format for programmatic content manipulation:
 import { Delta } from 'quill/core'
 
 const editor = ref<InstanceType<typeof QuillyEditor>>()
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 onMounted(() => {
   quill = editor.value?.initialize(Quill)!
@@ -143,7 +143,7 @@ Add custom handlers for toolbar buttons:
 
 ```vue
 <script setup lang="ts">
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options = {
   theme: 'snow',

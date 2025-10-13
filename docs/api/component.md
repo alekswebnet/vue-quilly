@@ -123,7 +123,7 @@ import { QuillyEditor } from 'vue-quilly'
 import Quill from 'quill'
 
 const editor = ref<InstanceType<typeof QuillyEditor>>()
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 onMounted(() => {
   quill = editor.value?.initialize(Quill)!
@@ -153,7 +153,7 @@ import 'quill/dist/quill.snow.css'
 
 const editor = ref<InstanceType<typeof QuillyEditor>>()
 const content = ref('<p>Hello World!</p>')
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options: QuillOptions = {
   theme: 'snow',
@@ -241,7 +241,7 @@ import type { QuillOptions, Delta, Range, EmitterSource } from 'quill/core'
 const editor = ref<InstanceType<typeof QuillyEditor>>()
 
 // Quill instance type
-let quill: Quill | null = null
+let quill: Quill | undefined
 ```
 
 ## See Also

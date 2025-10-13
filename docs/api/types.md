@@ -313,7 +313,7 @@ import 'quill/dist/quill.snow.css'
 const editor = ref<InstanceType<typeof QuillyEditor>>()
 
 // Quill instance with proper type
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 // Content with explicit type
 const content = ref<string>('')

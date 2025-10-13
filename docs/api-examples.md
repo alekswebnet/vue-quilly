@@ -35,7 +35,7 @@ const model = ref<string>('<h1>Hello World!</h1><p>Start writing...</p>')
 const editorDelta = ref<Delta>()
 const editorRange = ref<Range>()
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 const options = ref({
   theme: 'snow',
@@ -299,7 +299,7 @@ import 'quill/dist/quill.core.css'
 const editor = ref<InstanceType<typeof QuillyEditor>>()
 const model = ref<string>('<h1>Custom Editor</h1><p>Minimal setup!</p>')
 
-let quill: Quill | null = null
+let quill: Quill | undefined
 
 // Import base blots
 const Inline = Quill.import('blots/inline') as BlotConstructor
