@@ -30,8 +30,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.1(vue@3.5.17(typescript@5.8.3))
       vue-quilly:
-        specifier: ^1.1.4
-        version: 1.1.4(typescript@5.8.3)
+        specifier: ^1.1.5
+        version: 1.1.5(typescript@5.8.3)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
@@ -730,8 +730,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  vue-quilly@1.1.4:
-    resolution: {integrity: sha512-TbnVtwNy4Lz96VOnG7uFtA9BU1VBkgtQLiKr2b+ZjkxUL2qHMPgu8OnqokKMHx38Z5v0F3apYOc8J9s9RGC3Dg==}
+  vue-quilly@1.1.5:
+    resolution: {integrity: sha512-1y8ZOw9U3w/LZE+Gph4QcGH5Zi7mnZdnCr6g+iKop7xDQaT7re9bKhpJV5kmbnAr6O2B3SJlSS5AMZKoBH1QOA==}
 
   vue-tsc@2.2.12:
     resolution: {integrity: sha512-P7OP77b2h/Pmk+lZdJ0YWs+5tJ6J2+uOQPo7tlBnY44QqQSPYvS0qVT4wqDJgwrZaLe47etJLLQRFia71GYITw==}
@@ -1370,7 +1370,7 @@ snapshots:
       markdown-it: 13.0.2
       vue: 3.5.17(typescript@5.8.3)
 
-  vue-quilly@1.1.4(typescript@5.8.3):
+  vue-quilly@1.1.5(typescript@5.8.3):
     dependencies:
       quill: 2.0.3
       vue: 3.5.17(typescript@5.8.3)
