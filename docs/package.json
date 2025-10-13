@@ -1,0 +1,71 @@
+{{{
+
+  "name": "vue-quilly-docs",
+
+  "version": "1.0.0",  "name": "vue-quilly-docs",  "name": "vue-quilly-docs",
+
+  "description": "Documentation for vue-quilly",
+
+  "type": "module",  "version": "1.0.0",  "type": "module",
+
+  "scripts": {
+
+    "dev": "vitepress dev",  "description": "Documentation for vue-quilly",  "version": "1.0.0",
+
+    "build": "vitepress build",
+
+    "preview": "vitepress preview"  "type": "module",  "description": "",
+
+  },
+
+  "devDependencies": {  "scripts": {  "packageManager": "pnpm@10.18.2",
+
+    "vitepress": "^1.5.0"
+
+  },    "dev": "vitepress dev",  "pnpm": {
+
+  "author": {
+
+    "name": "Oleksandr Shevchuk",    "build": "vitepress build",    "onlyBuiltDependencies": [
+
+    "email": "alekswebnet@gmail.com"
+
+  },    "preview": "vitepress preview"      "@parcel/watcher",
+
+  "license": "MIT"
+
+}  },      "esbuild"
+
+
+  "devDependencies": {    ]
+
+    "vitepress": "2.0.0-alpha.12"  },
+
+  },  "author": "Aleksandr Shevchuk <alekswebnet@gmail.com>",
+
+  "author": {  "license": "MIT",
+
+    "name": "Oleksandr Shevchuk",  "engines": {
+
+    "email": "alekswebnet@gmail.com"    "node": "^20.6.0 || >=22.0.0"
+
+  },  },
+
+  "license": "MIT"  "scripts": {
+
+}    "docs:dev": "vuepress dev docs",
+
+    "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
+    "docs:build": "vuepress build docs --clean-cache --clean-temp",
+    "docs:preview": "http-server docs/.vuepress/dist",
+    "vp-update": "pnpm dlx vp-update"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.24",
+    "vuepress": "2.0.0-rc.24",
+    "vuepress-theme-plume": "1.0.0-rc.170",
+    "http-server": "^14.1.1",
+    "vue": "^3.5.22",
+    "typescript": "^5.9.3"
+  }
+}
