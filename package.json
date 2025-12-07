@@ -57,17 +57,17 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^22.18.10",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
     "typescript": "^5.9.3",
-    "vite": "^6.3.6",
+    "vite": "^7.2.6",
     "vite-plugin-dts": "^4.5.4",
     "vitepress": "2.0.0-alpha.12",
-    "vue-tsc": "^2.2.12"
+    "vue-tsc": "^3.1.6"
   },
   "dependencies": {
     "quill": "^2.0.3",
-    "vue": "^3.5.22"
+    "vue": "^3.5.25"
   },
   "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd"
 }
