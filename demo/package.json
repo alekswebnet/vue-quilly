@@ -16,7 +16,7 @@
     "quill-image-resize-module": "^3.0.0",
     "vue": "^3.5.25",
     "vue-markdown-render": "^2.3.0",
-    "vue-quilly": "^1.1.5"
+    "vue-quilly": "^1.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.2",
