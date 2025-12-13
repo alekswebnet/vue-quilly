@@ -82,6 +82,10 @@ onMounted(() => {
 - [Nuxt 4 Integration](https://github.com/alekswebnet/vue-quilly/tree/main/nuxt) - SSR setup example
 - [Browser CDN Setup](https://codepen.io/redrobot753/pen/VwJwPLP) - CodePen example
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alekswebnet/vue-quilly&type=date&legend=top-left)](https://www.star-history.com/#alekswebnet/vue-quilly&type=date&legend=top-left)
+
 ## Support
 
 If you find `vue-quilly` useful and want to support its development:
