@@ -100,6 +100,10 @@ Check out live examples and learn from real implementations:
 - 📚 [Demo Source Code](https://github.com/alekswebnet/vue-quilly/tree/main/demo) - Complete examples with source code
 - ⚡ [Nuxt 4 Example](https://github.com/alekswebnet/vue-quilly/tree/main/nuxt) - SSR integration guide
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alekswebnet/vue-quilly&type=date&legend=top-left)](https://www.star-history.com/#alekswebnet/vue-quilly&type=date&legend=top-left)
+
 ## Support the Project
 
 If you find vue-quilly useful and want to support its development:
