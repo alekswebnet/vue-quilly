@@ -7,12 +7,12 @@ hero:
   text: ""
   tagline: Tiny Vue component for creating Quill v2 based WYSIWYG editors
   actions:
-    - theme: brand
+    - theme: alt
       text: Get Started
       link: /guide/getting-started
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/alekswebnet/vue-quilly
+    - theme: brand
+      text: Try Demo
+      link: https://vue-quilly.vercel.app/
 
 features:
   - title: 🚀 Quill v2 Support
