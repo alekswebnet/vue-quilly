@@ -66,8 +66,10 @@
     "vue-tsc": "^3.1.6"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "quill": "^2.0.3",
-    "vue": "^3.5.25"
+    "vue": "^3.5.25",
+    "vue-router": "^4.4.5"
   },
   "packageManager": "pnpm@10.25.0"
 }
