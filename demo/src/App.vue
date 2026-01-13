@@ -5,8 +5,9 @@ import DefaultEditorSnow from './components/DefaultEditorSnow.vue'
 import DefaultEditorBubble from './components/DefaultEditorBubble.vue'
 import VueMarkdown from 'vue-markdown-render'
 import { useUrlSearchParams } from '@vueuse/core'
-import ImageResizeEditor from './components/ImageResizeEditor.vue';
+import ImageResizeEditor from './components/ImageResizeEditor.vue'
 import SemanticHTMLEditor from './components/SemanticHTMLEditor.vue'
+import { Analytics } from '@vercel/analytics/vue'
 
 const params = useUrlSearchParams('hash-params')
 
@@ -78,6 +79,7 @@ const menuItems = computed(() => [
     <ImageResizeEditor v-if="isImageResizeTab" />
     <CustomEditor v-if="isCustomTab" />
   </div>
+  <Analytics />
 </template>
 
 <style>

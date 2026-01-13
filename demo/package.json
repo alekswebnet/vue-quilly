@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "@vueuse/core": "^14.1.0",
     "katex": "^0.16.25",
     "parchment": "^3.0.0",
