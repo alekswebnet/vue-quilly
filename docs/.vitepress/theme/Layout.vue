@@ -9,6 +9,3 @@ import { Analytics } from '@vercel/analytics/vue'
     <Analytics />
   </div>
 </template>
-
-<style scoped>
-</style>
