@@ -24,7 +24,10 @@ const mdSrc = `
 [![NPM Type Definitions](https://img.shields.io/npm/types/vue-quilly)](https://www.npmjs.com/package/vue-quilly?activeTab=code)
 [![GitHub License](https://img.shields.io/github/license/alekswebnet/vue-quilly)](https://github.com/alekswebnet/vue-quilly?tab=readme-ov-file#license)
 
-📖 **[Full Documentation](https://vue-quilly-docs.vercel.app/)**
+- [Full Documentation](https://vue-quilly-docs.vercel.app/) - Comprehensive guide and API reference
+- [Demo Source Code](https://github.com/alekswebnet/vue-quilly/tree/main/demo) - Complete examples with different configurations
+- [Nuxt 4 Integration](https://github.com/alekswebnet/vue-quilly/tree/main/nuxt) - SSR setup example
+- [Browser CDN Setup](https://codepen.io/redrobot753/pen/VwJwPLP) - CodePen example
 `
 
 const menuItems = computed(() => [
@@ -57,10 +60,10 @@ const menuItems = computed(() => [
 </script>
 
 <template>
-  <div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
+  <div class="container" style="padding-top: 1rem; padding-bottom: 10rem;">
     <nav class="nav">
       <div class="nav-left">
-        <h1>vue-quilly</h1>
+        <h1>🪶 vue-quilly</h1>
       </div>
       <div class="nav-right">
         <a href="https://github.com/alekswebnet/vue-quilly" target="_blank" class="button icon-only clear">
@@ -76,11 +79,11 @@ const menuItems = computed(() => [
     </nav>
     <p>Tiny Vue component, that helps to create Quill v2 based WYSIWYG editors</p>
     <vue-markdown :source="mdSrc" />
-    <nav class="tabs is" style="flex-wrap: wrap; margin-bottom: 3rem;">
+    <nav class="tabs" style="flex-wrap: wrap; margin-bottom: 3rem; row-gap: 1rem;">
         <a 
           v-for="item in menuItems" 
           :href="`#tab=${item.tabKey}`" 
-          :class="{'active': item.selected }">
+          :class="{'active text-primary': item.selected }">
           {{ item.title }}
         </a>
     </nav>

@@ -56,12 +56,12 @@ const onEditorChange = (eventName: string) => console.log(eventName)
   />
   <hr>
   <p class="tag">MODEL:</p>
-  <p>{{ model }}</p>
+  <p><small>{{ model }}</small></p>
   <button class="button" @click="model = `<h1>Hello world!</h1><p>I am a new paragraph</p>`">Set model</button>
   <button class="button" @click="quill?.setContents([])">Reset model</button>
   <hr>
   <p class="tag">CONTENTS:</p>
-  <p>{{ quill?.getContents() }}</p>
+  <p><small>{{ quill?.getContents() }}</small></p>
   <button
     class="button"
     @click="
