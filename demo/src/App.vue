@@ -18,31 +18,33 @@ const isImageResizeTab = computed(() => params.tab === 'image-resize')
 const isDefaultBubbleTab = computed(() => params.tab === 'bubble')
 
 const mdSrc = `
-[![GitHub Release](https://img.shields.io/github/v/release/alekswebnet/vue-quilly)](https://github.com/alekswebnet/vue-quilly/releases)
 [![npm version](https://img.shields.io/npm/v/vue-quilly?logo=npm&logoColor=fff)](https://www.npmjs.com/package/vue-quilly)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/vue-quilly)](https://www.npmjs.com/package/vue-quilly?activeTab=code)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/alekswebnet/vue-quilly)
+[![npm downloads](https://img.shields.io/npm/dm/vue-quilly?color=green)](https://npm.chart.dev/vue-quilly)
 [![NPM Type Definitions](https://img.shields.io/npm/types/vue-quilly)](https://www.npmjs.com/package/vue-quilly?activeTab=code)
 [![GitHub License](https://img.shields.io/github/license/alekswebnet/vue-quilly)](https://github.com/alekswebnet/vue-quilly?tab=readme-ov-file#license)
+
+📖 **[Full Documentation](https://vue-quilly-docs.vercel.app/)**
 `
 
 const menuItems = computed(() => [
   {
-    title: 'Default Editor (Snow theme)',
+    title: 'Snow theme',
     tabKey: 'snow',
     selected: isDefaultSnowTab.value
   },
   {
-    title: 'Default Editor (Bubble theme)',
+    title: 'Bubble theme',
     tabKey: 'bubble',
     selected: isDefaultBubbleTab.value
   },
   {
-    title: 'Default Editor with semantic HTML model',
+    title: 'Semantic HTML',
     tabKey: 'semantic',
     selected: isSemanticTab.value
   },
   {
-    title: 'Default Editor + quill-image-resize-module',
+    title: 'Default Editor + Image Resize',
     tabKey: 'image-resize',
     selected: isImageResizeTab.value
   },
@@ -55,24 +57,34 @@ const menuItems = computed(() => [
 </script>
 
 <template>
-  <div class="container">
-    <h1>vue-quilly</h1>
+  <div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
+    <nav class="nav">
+      <div class="nav-left">
+        <h1>vue-quilly</h1>
+      </div>
+      <div class="nav-right">
+        <a href="https://github.com/alekswebnet/vue-quilly" target="_blank" class="button icon-only clear">
+          <img src="https://icongr.am/devicon/github-original.svg?size=24&color=currentColor">
+        </a>
+        <a href="https://www.npmjs.com/package/vue-quilly" target="_blank" class="button icon-only clear">
+          <img src="https://icongr.am/devicon/npm-original-wordmark.svg?size=24&color=currentColor">
+        </a>
+        <a href="https://ko-fi.com/oleksandrshevchuk" target="_blank" class="button icon-only clear">
+          <img src="https://icongr.am/simple/buymeacoffee.svg?size=24&colored=true">
+        </a>
+      </div>
+    </nav>
     <p>Tiny Vue component, that helps to create Quill v2 based WYSIWYG editors</p>
     <vue-markdown :source="mdSrc" />
-    <nav class="nav">
-      <ul class="pure-menu-list">
-        <li v-for="item in menuItems" :class="{ 'pure-menu-selected': item.selected }">
-          <a :href="`#tab=${item.tabKey}`" class="pure-menu-link">{{ item.title }}</a>
-        </li>
-        <li style="margin-left: auto">
-          <a href="https://github.com/alekswebnet/vue-quilly/tree/main/demo" target="_blank" class="pure-menu-link" style="color: #0078e7">
-            <span>Source code &nbsp;</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="#0078e7" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          </a>
-        </li>
-      </ul>
+    <nav class="tabs is" style="flex-wrap: wrap; margin-bottom: 3rem;">
+        <a 
+          v-for="item in menuItems" 
+          :href="`#tab=${item.tabKey}`" 
+          :class="{'active': item.selected }">
+          {{ item.title }}
+        </a>
     </nav>
-    <hr>
+
     <DefaultEditorSnow v-if="isDefaultSnowTab" />
     <DefaultEditorBubble v-if="isDefaultBubbleTab" />
     <SemanticHTMLEditor v-if="isSemanticTab" />
@@ -83,53 +95,25 @@ const menuItems = computed(() => [
 </template>
 
 <style>
-html,
-button,
-input,
-textarea {
-  font-family: system-ui, sans-serif;
-  font-size: 14px;
-}
-body {
+body, html {
   margin: 0;
   padding: 0;
-  padding: 30px;
-  font-size: 14px;
-  text-rendering: optimizeSpeed;
-}
-p {
   word-break: break-all;
 }
-.pure-menu-link {
-  display: inline-flex;
-  align-items: center;
-}
-.container {
-  max-width: 1060px;
-  width: 100%;
-  margin: auto;
-}
-.text-label {
-  text-transform: uppercase;
-  color: slategray;
-}
-button + button {
-  margin-left: 2px;
-}
-.button-xsmall {
-  font-size: 70%;
-}
-.flex {
-  display: flex;
-}
-.nav {
-  display: flex;
-}
-.nav .pure-menu-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-.items-center {
-  align-items: center;
+:root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #2d2d2d;
+  --color-primary: #3ca877;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 16px;
+  --font-color: #333333;
+  --font-family-sans: sans-serif;
+  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
 </style>

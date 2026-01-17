@@ -52,14 +52,16 @@ const onEditorChange = (eventName: string) => console.log(eventName)
     @selection-change="onSelectionChange"
     @editor-change="onEditorChange"
   />
-  <p class="text-label">MODEL:</p>
+  <hr>
+  <p class="tag">MODEL:</p>
   <p>{{ model }}</p>
-  <button class="pure-button" @click="model = `<h1>Hello world!</h1><p>I am a new paragraph</p>`">Set model</button>
-  <button class="pure-button" @click="quill?.setContents([])">Reset model</button>
-  <p class="text-label">CONTENTS:</p>
+  <button class="button" @click="model = `<h1>Hello world!</h1><p>I am a new paragraph</p>`">Set model</button>
+  <button class="button" @click="quill?.setContents([])">Reset model</button>
+  <hr>
+  <p class="tag">CONTENTS:</p>
   <p>{{ quill?.getContents() }}</p>
   <button
-    class="pure-button"
+    class="button"
     @click="
       quill?.setContents(
         new Delta()
@@ -75,14 +77,18 @@ const onEditorChange = (eventName: string) => console.log(eventName)
   >
     Set contents
   </button>
-  <button class="pure-button" @click="quill?.setContents([])">Reset contents</button>
-  <p class="text-label">LAST CHANGE:</p>
+  <button class="button" @click="quill?.setContents([])">Reset contents</button>
+  <hr>
+  <p class="tag">LAST CHANGE:</p>
   <p>{{ editorDelta }}</p>
-  <p class="text-label">CURRENT SELECTION:</p>
+  <hr>
+  <p class="tag">CURRENT SELECTION:</p>
   <p>{{ editorRange }}</p>
-  <button class="pure-button" @click="quill?.setSelection({ index: 5, length: 2 })">Set range</button>
-  <p class="text-label">CONTENT LENGTH:</p>
+  <button class="button" @click="quill?.setSelection({ index: 5, length: 2 })">Set range</button>
+  <hr>
+  <p class="tag">CONTENT LENGTH:</p>
   <p>{{ quill?.getLength() }}</p>
-  <p class="text-label">Readonly:</p>
+  <hr>
+  <p class="tag">Readonly:</p>
   <p><input :value="quill?.isEnabled()" type="checkbox" @input="quill?.enable(!quill?.isEnabled())"/></p>
 </template>
