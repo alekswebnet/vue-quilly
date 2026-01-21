@@ -21,10 +21,10 @@ Tiny Vue component, that helps to create [Quill v2](https://quilljs.com/) based 
 
 📖 **[Full Documentation](https://vue-quilly-docs.vercel.app/)**
 
-- [Getting Started](https://vue-quilly-docs.vercel.app/guide/getting-started)
-- [Installation Guide](https://vue-quilly-docs.vercel.app/guide/installation)
-- [Basic Usage](https://vue-quilly-docs.vercel.app/guide/basic-usage)
-- [API Reference](https://vue-quilly-docs.vercel.app/api/component)
+- [Getting Started](https://vue-quilly-docs.vercel.app/guide/getting-started.html)
+- [Installation Guide](https://vue-quilly-docs.vercel.app/guide/installation.html)
+- [Basic Usage](https://vue-quilly-docs.vercel.app/guide/basic-usage.html)
+- [API Reference](https://vue-quilly-docs.vercel.app/api/component.html)
 - [Examples](https://vue-quilly-docs.vercel.app/examples/)
 
 ## Quick Start
