@@ -47,12 +47,12 @@ const menuItems = computed(() => [
     selected: isSemanticTab.value
   },
   {
-    title: 'Default Editor + Image Resize',
+    title: 'Image Resize',
     tabKey: 'image-resize',
     selected: isImageResizeTab.value
   },
   {
-    title: 'Custom Editor',
+    title: 'Custom Toolbar',
     tabKey: 'custom',
     selected: isCustomTab.value
   }
@@ -78,7 +78,9 @@ const menuItems = computed(() => [
       </div>
     </nav>
     <p>Tiny Vue component, that helps to create Quill v2 based WYSIWYG editors</p>
-    <vue-markdown :source="mdSrc" />
+
+    <vue-markdown class="markdown-content" :source="mdSrc" />
+
     <nav class="tabs" style="flex-wrap: wrap; margin-bottom: 3rem; row-gap: 1rem;">
         <a 
           v-for="item in menuItems" 
@@ -118,5 +120,8 @@ body, html {
   --font-color: #333333;
   --font-family-sans: sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+.markdown-content {
+  margin-bottom: 5rem;
 }
 </style>
